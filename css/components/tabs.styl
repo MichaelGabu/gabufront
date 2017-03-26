@@ -1,0 +1,84 @@
+.tabs
+	display flex
+	position relative
+	height 48px
+	background-color rgba(primary-color, .1)
+	margin 0 auto 2rem
+	width 100%
+	white-space nowrap
+	@media (max-width 600px)
+		flex-direction column
+		padding 0
+		height auto
+
+	.tab
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		display: block;
+		float: left;
+		text-align: center;
+		line-height: 48px;
+		height: 48px;
+		padding: 0;
+		margin: 0;
+		text-transform: uppercase;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		letter-spacing: .8px;
+		width: 15%;
+		min-width: 80px;
+		@media (max-width 600px)
+			width 100%
+			box-sizing border-box
+			text-align left
+			&:nth-child(2n)
+				background-color rgba(primary-color, .15)
+		
+		a
+			color: primary-color;
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			@include transition( color .28s ease);
+			@media (max-width 600px)
+				padding 0 1.2rem
+				&.active
+				&:hover
+					background primary-color
+					color light-color !important
+			&:hover
+				color: lighten(primary-color, 20%);
+
+		&.disabled a
+			color: lighten(primary-color, 20%);
+			cursor: default;
+
+	.indicator
+		position: absolute;
+		bottom: 0;
+		height: 2px;
+		background-color: green;
+		will-change: left, right;
+		@media (max-width 600px)
+			display none
+
+.hide-tab-scrollbar
+	position: relative;
+	height: 48px;
+	overflow: hidden;
+
+	.tabs
+		overflow-x: scroll;
+		overflow-y: hidden;
+
+// Hacky way to find scrollbar width or height.
+.scrollbar-measure
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;

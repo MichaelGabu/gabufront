@@ -1,0 +1,35 @@
+.dropdown-button
+	cursor pointer
+	display block
+
+.dropdown-content
+	display none
+	> li
+		display block
+		background secondary-color
+		color light-color
+		transition .3s
+		&:first-child
+			border-top-left-radius 10px
+		&:last-child
+			border-bottom-right-radius 10px
+			border-bottom-left-radius 10px
+		&:nth-child(2n)
+			background lightness(secondary-color, 40)
+		> a
+			display flex
+			align-items center
+			font-size 14px
+			padding .7rem 1rem .5rem
+			.material-icons
+				font-size 20px
+				margin -2px .5rem 0 0
+		&:hover
+			background primary-color
+			color light-color
+			> a
+				.material-icons
+					color light-color
+		&.red
+			&:hover
+				background red

@@ -1,0 +1,144 @@
+// Scroll
+::-webkit-scrollbar
+	border-radius 0px
+	height 7px
+	width 7px
+::-webkit-scrollbar-track
+	border-radius 0
+::-webkit-scrollbar-track-piece
+	background-color transparent
+::-webkit-scrollbar-thumb
+	background primary-color
+	&:window-inactive
+		background primary-color
+::-webkit-scrollbar-corner
+	background-color transparent
+
+// Fonts
+
+// General
+::selection
+	background secondary-color
+	color light-color
+
+:focus
+	outline 0px none
+
+*
+	margin 0
+	padding 0
+
+body
+	font-family primary-font
+	color dark-color
+
+a
+	color inherit
+	text-decoration none
+	img
+		border none
+
+p
+	margin 0 0 1rem
+
+h1
+	font-size 2.7rem
+	margin 0 0 1.7rem
+	color primary-color
+	text-transform uppercase
+	@media (max-width 700px)
+		font-size 2rem
+
+h2
+	font-size 2rem
+	color lightness(secondary-color, 30)
+	margin 0 0 1rem
+	line-height .9
+	@media (max-width 700px)
+		font-size 1.5rem
+
+h3
+	font-size 1.2rem
+	margin 0 0 1rem
+
+hr
+	border none
+	border-bottom 1px solid grey
+	margin 0 0 2rem
+
+.lean-overlay
+.modal-overlay
+	background black
+	position fixed
+	top 0
+	left 0
+	right 0
+	bottom 0
+	z-index 1002
+
+#sidenav-overlay
+	position fixed
+	top 0
+	left 0
+	right 0
+	height 120vh
+	background-color rgba(0,0,0,0.5)
+	z-index 997
+	will-change opacity
+
+.drag-target
+	height 100%
+	width 10px
+	position fixed
+	top 0
+	z-index 998
+
+.left-align
+	text-align left !important
+
+.right-align
+	text-align right !important
+
+.center-align
+	text-align center !important
+
+.separator
+	width 100%
+
+.no-margin
+	margin 0 !important
+
+.no-padding
+	margin 0 !important
+
+.list-checkbox
+	display flex
+	flex-wrap wrap
+	margin 0 -.5rem 1.5rem
+	> li
+		display inline-block
+		margin 0 .5rem .5rem
+
+.detail
+	.detail-content
+		padding 0 1rem 1rem
+		border-bottom 1px dashed grey
+		margin 0 0 1.5rem
+		border-left 1px dashed grey
+		border-radius 0 0 0 1rem
+		label
+			font-size 12px !important
+			color grey
+			display block
+			margin 0 0 .5rem
+			color primary-color
+		h3
+			font-size 14px !important
+			margin 0 0 .5rem
+		h4
+			font-size 18px !important
+			margin 0 0 .6rem
+		h2
+			font-size 24px !important
+			margin 0 !important
+			text-transform initial !important
