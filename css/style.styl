@@ -2,3 +2,60 @@
 @import 'nib/gradients'
 @import 'components/variables'
 @import 'components/*'
+
+// Content
+.content
+	display flex
+	flex-direction column
+	min-height 100vh
+
+// Aside
+aside
+	background primary-color
+	color light-color
+	position fixed
+	top 0
+	left 0
+	bottom 0
+	width aside-width
+	nav
+		> ul
+			> li
+				display block
+				border-bottom 1px solid light-color
+				> a
+					display block
+					padding 1rem 2rem
+				> ul
+					padding 0 0 0 1rem
+					background light-color
+					color primary-color
+					> li
+						border-bottom 1px solid primary-color
+						display block
+						&:last-child
+							border none
+						> a
+							display block
+							padding .5rem 2rem
+
+// Header
+header
+	padding 1rem 2rem
+	margin-left aside-width
+	h1
+		margin 0
+
+// Section
+section
+	padding 1rem 2rem
+	margin-left aside-width
+
+// Footer
+footer
+	padding 1rem 2rem
+	margin-left aside-width
+	margin-top auto
+	small
+		display block
+		color grey

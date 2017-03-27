@@ -5,33 +5,57 @@
 		<link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,700,900" rel="stylesheet">
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-		<title>Framework 1.0</title>
+		<title>Gabufront 1.0</title>
 	</head>
 	<body>
-		<header>
-			<h1>Framework 1.0</h1>
-		</header>
+		<div class="content">
+			<header>
+				<h1>Gabufront 1.0</h1>
+			</header>
 
-		<aside>
-			<nav>
-				<ul>
-					<li>
-						<a href="">Javascript</a>
-						<ul>
-							<li><a href="#modals">Modals</a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-		</aside>
+			<aside>
+				<nav>
+					<ul>
+						<li>
+							<a href=""><b>Javascript</b></a>
+							<ul>
+								<li><a href="#modals">Modals</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</aside>
 
-		<section>
-			<h2>Javascript</h2>
+			<section>
+				<h2>Javascript</h2>
 
-			<article id="modals">
-				<h3>Modals</h3>
-			</article>
+				<article id="modals">
+					<h3>Modals</h3>
+					<h4>Ejemplo</h4>
 
-		</section>
+					<div class="btns">
+						<!-- <a class="btn modal-open" onclick="modal()">MODAL</a> -->
+						<a class="btn modal-open">MODAL</a>
+					</div>
+
+					<div id="modal1" class="modal">
+						<div class="modal-content">
+							<h2>Modal</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus fugiat placeat unde maiores repudiandae, sed error earum, ducimus facilis provident sint corrupti mollitia eius minus ipsam animi, tempore illo ex!</p>
+							<div class="btns right">
+								<a class="btn modal-close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<footer>
+				<small>Gabufront 1.0 • 2017</small>
+			</footer>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+			<script src="js/modal.js"></script>
+		</div>
 	</body>
 </html>
