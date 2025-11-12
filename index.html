@@ -1,37 +1,553 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,700,900" rel="stylesheet">
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-		<title>Framework 1.0</title>
-	</head>
-	<body>
-		<header>
-			<h1>Framework 1.0</h1>
-		</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabufront - Framework CSS/JS</title>
 
-		<aside>
-			<nav>
-				<ul>
-					<li>
-						<a href="">Javascript</a>
-						<ul>
-							<li><a href="#modals">Modals</a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-		</aside>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,700,900" rel="stylesheet">
 
-		<section>
-			<h2>Javascript</h2>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-			<article id="modals">
-				<h3>Modals</h3>
-			</article>
+    <!-- Gabufront CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
-		</section>
-	</body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .demo-header {
+            background: linear-gradient(135deg, #AD002B 0%, #8B0022 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .demo-header h1 {
+            color: white;
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        .demo-header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .demo-nav {
+            background: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .demo-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .demo-nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .demo-nav a:hover {
+            color: #AD002B;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .demo-section h2 {
+            color: #AD002B;
+            border-bottom: 2px solid #AD002B;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-section h3 {
+            color: #666;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-example {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .demo-code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .color-swatch {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+            margin: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .color-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="demo-header">
+        <h1>Gabufront</h1>
+        <p>Framework CSS/JS moderno y ligero</p>
+        <p style="font-size: 0.9rem;">v0.2.0</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="demo-nav">
+        <ul>
+            <li><a href="#buttons">Botones</a></li>
+            <li><a href="#forms">Formularios</a></li>
+            <li><a href="#cards">Tarjetas</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#modals">Modales</a></li>
+            <li><a href="#tabs">Tabs</a></li>
+            <li><a href="#collapsible">Collapsible</a></li>
+            <li><a href="#dropdown">Dropdown</a></li>
+            <li><a href="#chips">Chips</a></li>
+            <li><a href="#colors">Colores</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="demo-container">
+
+        <!-- Buttons Section -->
+        <section id="buttons" class="demo-section">
+            <h2>Botones</h2>
+
+            <h3>Botones Básicos</h3>
+            <div class="demo-example">
+                <button class="btn">Botón Normal</button>
+                <button class="btn btn-flat">Botón Flat</button>
+                <button class="btn" disabled>Deshabilitado</button>
+            </div>
+
+            <h3>Botones Circulares</h3>
+            <div class="demo-example">
+                <button class="btn btn-circle">
+                    <i class="material-icons">add</i>
+                </button>
+                <button class="btn btn-circle">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button class="btn btn-circle">
+                    <i class="material-icons">delete</i>
+                </button>
+            </div>
+
+            <h3>Botón de Búsqueda</h3>
+            <div class="demo-example">
+                <button class="btn btn-search">
+                    <i class="material-icons">search</i>
+                    Buscar
+                </button>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section id="forms" class="demo-section">
+            <h2>Formularios</h2>
+
+            <h3>Inputs de Texto</h3>
+            <div class="demo-example">
+                <div class="input-field">
+                    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+                    <label for="nombre">Nombre</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" id="email" placeholder="tu@email.com">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input-field">
+                    <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+                    <label for="mensaje">Mensaje</label>
+                </div>
+            </div>
+
+            <h3>Checkboxes</h3>
+            <div class="demo-example">
+                <p>
+                    <input type="checkbox" id="check1" checked>
+                    <label for="check1">Opción 1 (marcada)</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Opción 2</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="check3" disabled>
+                    <label for="check3">Opción 3 (deshabilitada)</label>
+                </p>
+            </div>
+
+            <h3>Radio Buttons</h3>
+            <div class="demo-example">
+                <p>
+                    <input type="radio" name="grupo1" id="radio1" checked>
+                    <label for="radio1">Opción A</label>
+                </p>
+                <p>
+                    <input type="radio" name="grupo1" id="radio2">
+                    <label for="radio2">Opción B</label>
+                </p>
+                <p>
+                    <input type="radio" name="grupo1" id="radio3">
+                    <label for="radio3">Opción C</label>
+                </p>
+            </div>
+
+            <h3>Switch</h3>
+            <div class="demo-example">
+                <div class="switch">
+                    <label>
+                        Off
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        On
+                    </label>
+                </div>
+
+                <div class="switch">
+                    <label>
+                        Deshabilitado
+                        <input type="checkbox" disabled checked>
+                        <span class="lever"></span>
+                        On
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="cards" class="demo-section">
+            <h2>Tarjetas</h2>
+
+            <h3>Tarjeta Básica</h3>
+            <div class="demo-example">
+                <div class="card" style="max-width: 400px;">
+                    <div class="card-content">
+                        <h3>Título de la Tarjeta</h3>
+                        <p>Este es el contenido de la tarjeta. Puedes incluir cualquier tipo de contenido aquí.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#!">Enlace 1</a>
+                        <a href="#!">Enlace 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Panel de Tarjeta</h3>
+            <div class="demo-example">
+                <div class="card-panel" style="max-width: 400px;">
+                    <p>Este es un panel de tarjeta simple con contenido básico.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Section -->
+        <section id="grid" class="demo-section">
+            <h2>Sistema de Grid</h2>
+
+            <h3>Grid de 12 Columnas</h3>
+            <div class="demo-example">
+                <div class="grid">
+                    <div class="grid-item w12" style="background: #AD002B; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        12 columnas (w12)
+                    </div>
+
+                    <div class="grid-item w6" style="background: #999; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        6 columnas (w6)
+                    </div>
+                    <div class="grid-item w6" style="background: #999; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        6 columnas (w6)
+                    </div>
+
+                    <div class="grid-item w4" style="background: #666; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        4 columnas (w4)
+                    </div>
+                    <div class="grid-item w4" style="background: #666; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        4 columnas (w4)
+                    </div>
+                    <div class="grid-item w4" style="background: #666; color: white; padding: 1rem; margin-bottom: 0.5rem;">
+                        4 columnas (w4)
+                    </div>
+
+                    <div class="grid-item w3" style="background: #333; color: white; padding: 1rem;">
+                        3 (w3)
+                    </div>
+                    <div class="grid-item w3" style="background: #333; color: white; padding: 1rem;">
+                        3 (w3)
+                    </div>
+                    <div class="grid-item w3" style="background: #333; color: white; padding: 1rem;">
+                        3 (w3)
+                    </div>
+                    <div class="grid-item w3" style="background: #333; color: white; padding: 1rem;">
+                        3 (w3)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals Section -->
+        <section id="modals" class="demo-section">
+            <h2>Modales</h2>
+
+            <h3>Modal Básico</h3>
+            <div class="demo-example">
+                <button class="btn" data-target="modal1">Abrir Modal</button>
+            </div>
+
+            <!-- Modal 1 -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Título del Modal</h4>
+                    <p>Este es un modal básico. Puedes cerrarlos haciendo clic en el botón de cerrar, haciendo clic fuera del modal, o presionando la tecla ESC.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque leo nec diam volutpat, at pharetra ligula hendrerit.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn modal-close">Cerrar</button>
+                    <button class="btn modal-close">Aceptar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <section id="tabs" class="demo-section">
+            <h2>Tabs (Pestañas)</h2>
+
+            <div class="demo-example">
+                <div class="tabs">
+                    <ul>
+                        <li class="tab"><a href="#tab1" class="active">Tab 1</a></li>
+                        <li class="tab"><a href="#tab2">Tab 2</a></li>
+                        <li class="tab"><a href="#tab3">Tab 3</a></li>
+                    </ul>
+                    <div class="indicator"></div>
+                </div>
+
+                <div id="tab1" class="tab-content active" style="padding: 1.5rem; border: 1px solid #e0e0e0; border-top: none;">
+                    <h4>Contenido del Tab 1</h4>
+                    <p>Este es el contenido del primer tab. Puedes incluir cualquier contenido HTML aquí.</p>
+                </div>
+
+                <div id="tab2" class="tab-content" style="padding: 1.5rem; border: 1px solid #e0e0e0; border-top: none; display: none;">
+                    <h4>Contenido del Tab 2</h4>
+                    <p>Este es el segundo tab con diferente contenido.</p>
+                </div>
+
+                <div id="tab3" class="tab-content" style="padding: 1.5rem; border: 1px solid #e0e0e0; border-top: none; display: none;">
+                    <h4>Contenido del Tab 3</h4>
+                    <p>Y este es el tercer tab.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collapsible Section -->
+        <section id="collapsible" class="demo-section">
+            <h2>Collapsible (Acordeón)</h2>
+
+            <div class="demo-example">
+                <ul class="collapsible">
+                    <li class="active">
+                        <div class="collapsible-header">
+                            <i class="material-icons">filter_drama</i>
+                            Primer Item (expandido por defecto)
+                        </div>
+                        <div class="collapsible-body" style="max-height: 200px;">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque leo nec diam volutpat, at pharetra ligula hendrerit. Sed euismod augue vel nisi dignissim.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">place</i>
+                            Segundo Item
+                        </div>
+                        <div class="collapsible-body">
+                            <span>Este es el contenido del segundo item. Haz clic en el header para expandir o colapsar.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">shopping_cart</i>
+                            Tercer Item
+                        </div>
+                        <div class="collapsible-body">
+                            <span>Y este es el contenido del tercer item del acordeón.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Dropdown Section -->
+        <section id="dropdown" class="demo-section">
+            <h2>Dropdown (Menú Desplegable)</h2>
+
+            <div class="demo-example">
+                <button class="btn dropdown-button" data-target="dropdown1">
+                    Dropdown
+                    <i class="material-icons" style="margin-left: 0.5rem; vertical-align: middle;">arrow_drop_down</i>
+                </button>
+
+                <ul id="dropdown1" class="dropdown-content" style="background: white; list-style: none; padding: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 4px; min-width: 200px;">
+                    <li style="border-bottom: 1px solid #e0e0e0;"><a href="#!" style="display: block; padding: 1rem; color: #333; text-decoration: none;">Opción 1</a></li>
+                    <li style="border-bottom: 1px solid #e0e0e0;"><a href="#!" style="display: block; padding: 1rem; color: #333; text-decoration: none;">Opción 2</a></li>
+                    <li><a href="#!" style="display: block; padding: 1rem; color: #333; text-decoration: none;">Opción 3</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chips Section -->
+        <section id="chips" class="demo-section">
+            <h2>Chips (Etiquetas)</h2>
+
+            <div class="demo-example">
+                <div class="chip">
+                    Tag Simple
+                </div>
+
+                <div class="chip">
+                    Tecnología
+                    <i class="material-icons">close</i>
+                </div>
+
+                <div class="chip">
+                    Diseño
+                    <i class="material-icons">close</i>
+                </div>
+
+                <div class="chip">
+                    Desarrollo
+                    <i class="material-icons">close</i>
+                </div>
+            </div>
+
+            <p style="color: #666; font-size: 0.9rem; margin-top: 1rem;">
+                <i class="material-icons" style="vertical-align: middle; font-size: 1rem;">info</i>
+                Haz clic en el ícono de cerrar para eliminar un chip.
+            </p>
+        </section>
+
+        <!-- Colors Section -->
+        <section id="colors" class="demo-section">
+            <h2>Colores</h2>
+
+            <h3>Paleta de Colores Principal</h3>
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background: #AD002B;"></div>
+                    <p style="text-align: center; font-size: 0.9rem;">#AD002B<br>Primary</p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: #999999;"></div>
+                    <p style="text-align: center; font-size: 0.9rem;">#999999<br>Secondary</p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: #666666;"></div>
+                    <p style="text-align: center; font-size: 0.9rem;">#666666<br>Dark</p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: #FFFFFF; border: 1px solid #e0e0e0;"></div>
+                    <p style="text-align: center; font-size: 0.9rem;">#FFFFFF<br>Light</p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: #FBFBFB; border: 1px solid #e0e0e0;"></div>
+                    <p style="text-align: center; font-size: 0.9rem;">#FBFBFB<br>Card BG</p>
+                </div>
+            </div>
+
+            <h3>Clases de Color de Texto</h3>
+            <div class="demo-example">
+                <p class="primary-color-text">Texto con color primario (.primary-color-text)</p>
+                <p class="lightblue-text">Texto azul claro (.lightblue-text)</p>
+                <p class="blue-text">Texto azul (.blue-text)</p>
+            </div>
+        </section>
+
+        <!-- Preloader Section -->
+        <section id="preloader" class="demo-section">
+            <h2>Preloader (Spinner de Carga)</h2>
+
+            <div class="demo-example">
+                <div class="preloader-wrapper active">
+                    <div class="spinner-layer">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 3rem 0; color: #999;">
+            <h3 style="color: #AD002B;">Gabufront v0.2.0</h3>
+            <p>Framework CSS/JS moderno y ligero</p>
+            <p style="font-size: 0.9rem;">
+                <a href="https://github.com/MichaelGabu/gabufront" style="color: #AD002B; text-decoration: none;">GitHub</a> |
+                Licencia MIT | © 2024 Michael Gabu
+            </p>
+        </footer>
+    </div>
+
+    <!-- Gabufront JavaScript -->
+    <script src="js/gabufront.js"></script>
+</body>
 </html>

@@ -1,0 +1,48 @@
+{
+  "name": "gabufront",
+  "version": "0.2.0",
+  "description": "Framework CSS/JS moderno y ligero para desarrollo web con componentes UI completos",
+  "main": "dist/gabufront.css",
+  "scripts": {
+    "build": "stylus css/style.styl -o dist/ -u nib",
+    "build:prod": "stylus -c css/style.styl -o dist/ -u nib",
+    "watch": "stylus -w css/style.styl -o dist/ -u nib",
+    "dev": "npm run watch",
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelGabu/gabufront.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "stylus",
+    "ui",
+    "components",
+    "material",
+    "responsive",
+    "frontend"
+  ],
+  "author": "Michael Gabu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelGabu/gabufront/issues"
+  },
+  "homepage": "https://github.com/MichaelGabu/gabufront#readme",
+  "devDependencies": {
+    "stylus": "^0.59.0",
+    "nib": "^1.2.0"
+  },
+  "files": [
+    "dist/",
+    "css/",
+    "js/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
